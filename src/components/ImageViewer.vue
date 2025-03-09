@@ -38,24 +38,24 @@ const trackers = ref([]);
 const hotspotBase = [
   {
     id: 1,
-    x: 0.2, // 20% of width
-    y: 0.2, // 20% of height
+    x: 450, // pixel
+    y: 180, // pixel
     size: 0.05, // 5% of smallest dimension
     title: "Discovery Zone",
     content: "Explore this fascinating area with rich details and history.",
   },
   {
     id: 2,
-    x: 0.6, // 60% of width
-    y: 0.4, // 40% of height
+    x: 880, // pixel
+    y: 420, // pixel
     size: 0.05, // 5% of smallest dimension
     title: "Hidden Gem",
     content: "A secret spot with amazing features waiting to be explored.",
   },
   {
     id: 3,
-    x: 0.7,
-    y: 0.3,
+    x: 1360,
+    y: 330,
     size: 0.05, // 5% of smallest dimension
     title: "Hidden Gem (2)",
     content:
@@ -118,12 +118,11 @@ const initViewer = () => {
 const getHotspotPixels = (hotspot) => {
   const imgWidth = imageDimensions.value.width;
   const imgHeight = imageDimensions.value.height;
-  // const minDimension = Math.min(imgWidth, imgHeight);
 
   return {
     ...hotspot,
-    x: hotspot.x * imgWidth,
-    y: hotspot.y * imgHeight,
+    x: hotspot.x,
+    y: hotspot.y,
     width: hotspot.size * imgWidth,
     height: hotspot.size * imgHeight,
   };
@@ -256,14 +255,11 @@ const zoomToAllHotspots = () => {
 const closeSidebar = () => {
   showSidebar.value = false;
   selectedHotspot.value = null;
-  // viewer.value.viewport.fitHorizontally(true);
-  // viewer.value.viewport.fitVertically(true);
-  viewer.value.viewport.goHome(true);
-  // zoomToLevel(1);
-  // viewer.value.viewport.fitBoundsWithConstraints(
-  //   new OpenSeadragon.Rect(0, 0, 0.5, 0.5),
-  //   true
-  // );
+
+  // wait for sidebar to close before zooming out
+  setTimeout(() => {
+    viewer.value.viewport.goHome();
+  }, 500);
 };
 
 const preventZoom = (e) => {
@@ -306,6 +302,7 @@ onMounted(() => {
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   position: relative;
+  z-index: 9999;
 }
 
 .sidebar-content {
