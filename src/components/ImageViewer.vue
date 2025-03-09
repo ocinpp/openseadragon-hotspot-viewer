@@ -367,7 +367,7 @@ onMounted(() => {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
 .close-btn:hover {
@@ -392,8 +392,8 @@ onMounted(() => {
     width: 100%;
     position: absolute;
     right: 0;
-    height: 30%;
-    top: 70%;
+    height: 30dvh;
+    top: 70dvh;
   }
   .controls {
     flex-direction: column;
