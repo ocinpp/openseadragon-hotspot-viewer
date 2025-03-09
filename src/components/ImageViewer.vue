@@ -401,6 +401,11 @@ onMounted(() => {
     flex-direction: column;
     width: 250px;
   }
+  .close-btn {
+    position: fixed;
+    top: auto;
+    bottom: 27.5dvh;
+  }
 }
 
 @keyframes fadeInDown {
