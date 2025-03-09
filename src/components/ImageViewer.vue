@@ -12,7 +12,7 @@
       <div class="sidebar" v-if="showSidebar">
         <div class="sidebar-content">
           <button @click="closeSidebar" class="close-btn">
-            <span>×</span>
+            <div>×</div>
           </button>
           <h2>{{ selectedHotspot?.title }}</h2>
           <p>{{ selectedHotspot?.content }}</p>
@@ -357,18 +357,19 @@ onMounted(() => {
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border: none;
   background: #ff6b6b;
   color: white;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   box-sizing: border-box;
+  padding: 0px;
 }
 
 .close-btn:hover {
