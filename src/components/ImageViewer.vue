@@ -42,7 +42,8 @@ const hotspotBase = [
     y: 180, // pixel
     size: 0.05, // 5% of smallest dimension
     title: "Discovery Zone",
-    content: "Explore this fascinating area with rich details and history.",
+    content:
+      "Discover the captivating charm of this historic area, full of rich details and fascinating stories. With this versatile tripod featuring a head, you'll have all you need to take professional-quality photos. The advanced 90° center column allows you to extend the tripod vertically or horizontally, letting you frame and shoot within seconds. Effortlessly secure your setup with the quick power lock system, and easily fold the tripod into a compact, portable size when not in use. You can even reposition the tripod with your camera still attached, ensuring you capture the perfect shot every time.📸✨",
   },
   {
     id: 2,
@@ -50,7 +51,8 @@ const hotspotBase = [
     y: 420, // pixel
     size: 0.05, // 5% of smallest dimension
     title: "Hidden Gem",
-    content: "A secret spot with amazing features waiting to be explored.",
+    content:
+      "Uncover a hidden gem brimming with incredible features just waiting to be discovered. This secret spot offers breathtaking views, unique landscapes, and captivating history that will leave you in awe. From tranquil hiking trails to scenic viewpoints, every corner has something special to offer. Whether you're an adventure seeker or simply looking for a peaceful retreat, this enchanting location promises an unforgettable experience. 🌿✨",
   },
   {
     id: 3,
@@ -59,7 +61,7 @@ const hotspotBase = [
     size: 0.05, // 5% of smallest dimension
     title: "Hidden Gem (2)",
     content:
-      "Another secret spot with amazing features waiting to be explored.",
+      "Explore an undiscovered paradise filled with hidden wonders awaiting your arrival. 🌄🌿✨",
   },
 ];
 
@@ -390,7 +392,7 @@ onMounted(() => {
     width: 100%;
     position: absolute;
     right: 0;
-    height: 50%;
+    height: 30%;
     top: 70%;
   }
   .controls {
