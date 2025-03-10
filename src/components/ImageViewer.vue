@@ -299,11 +299,13 @@ onMounted(() => {
 }
 
 .sidebar {
+  position: absolute;
   width: 350px;
+  right: 0;
+  height: 100%;
   background: linear-gradient(135deg, #ffffff, #f0f0f0);
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  position: relative;
   z-index: 9999;
 }
 
