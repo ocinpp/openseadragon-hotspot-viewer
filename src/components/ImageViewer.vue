@@ -348,13 +348,11 @@ onMounted(() => {
   color: #2c3e50;
   margin-top: 0;
   font-size: 1.8rem;
-  animation: fadeInDown 0.5s ease;
 }
 
 .sidebar p {
   color: #666;
   line-height: 1.6;
-  animation: fadeInUp 0.5s ease;
 }
 
 .close-btn {
@@ -381,14 +379,13 @@ onMounted(() => {
 
 .sidebar-enter-active,
 .sidebar-leave-active {
-  transition: all 0.4s ease;
+  transition: right 0.4s ease;
 }
 
 .sidebar-enter-from,
 .sidebar-leave-to {
-  width: 0;
-  padding: 2rem 0;
-  opacity: 0;
+  /* sidebar width */
+  right: -350px;
 }
 
 @media (max-width: 768px) {
@@ -408,27 +405,22 @@ onMounted(() => {
     top: auto;
     bottom: 27.5dvh;
   }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+  .sidebar-enter-active,
+  .sidebar-leave-active {
+    transition: top 0.4s ease;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .sidebar-enter-from,
+  .sidebar-leave-to {
+    top: 100dvh;
   }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  .sidebar-enter-active .close-btn,
+  .sidebar-leave-active .close-btn {
+    transition: bottom 0.4s ease;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .sidebar-enter-from .close-btn,
+  .sidebar-leave-to .close-btn {
+    /* button height */
+    bottom: -2.2rem;
   }
 }
 </style>
