@@ -210,17 +210,17 @@ const zoomToHotspot = (hotspot) => {
     hotspot.height + padding * 2
   );
   console.log("Zooming to hotspot:", rect);
-  viewer.value.viewport.fitBounds(rect, true);
+  viewer.value.viewport.fitBounds(rect);
 };
 
 const zoomToCenter = () => {
   const center = viewer.value.viewport.getCenter();
-  viewer.value.viewport.zoomTo(2, center, true);
+  viewer.value.viewport.zoomTo(2, center);
 };
 
 const zoomToLevel = (level) => {
   const center = viewer.value.viewport.getCenter();
-  viewer.value.viewport.zoomTo(level, center, true);
+  viewer.value.viewport.zoomTo(level, center);
 };
 
 const smoothZoom = async () => {
@@ -251,7 +251,7 @@ const zoomToAllHotspots = () => {
   });
 
   const rect = pixelsToImageCoords(minX, minY, maxX - minX, maxY - minY);
-  viewer.value.viewport.fitBounds(rect, true);
+  viewer.value.viewport.fitBounds(rect);
 };
 
 const closeSidebar = () => {
